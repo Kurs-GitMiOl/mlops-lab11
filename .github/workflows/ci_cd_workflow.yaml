@@ -107,7 +107,7 @@ jobs:
       
       - name: Resolve Lambda role ARN from name
         id: lambda_role
-        run: echo "role_arn=arn:aws:iam::483517701716:role/voclabs" >> "$GITHUB_OUTPUT"
+        run: echo "role_arn=arn:aws:iam::483517701716:role/LabRole" >> "$GITHUB_OUTPUT"
 
       - name: Deploy with AWS SAM
         run: bash scripts/sam_deploy.sh
