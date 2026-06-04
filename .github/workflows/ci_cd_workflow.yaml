@@ -104,11 +104,10 @@ jobs:
           STACK_NAME: sentiment-app-stack
           AWS_REGION: ${{ env.AWS_REGION }}
 
+      
       - name: Resolve Lambda role ARN from name
         id: lambda_role
-        run: bash scripts/resolve_lambda_role.sh
-        env:
-          ROLE_NAME: voclabs
+        run: echo "role_arn=arn:aws:iam::483517701716:role/voclabs" >> "$GITHUB_OUTPUT"
 
       - name: Deploy with AWS SAM
         run: bash scripts/sam_deploy.sh
